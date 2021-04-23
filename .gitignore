@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Mac OS X
+.DS_Store
+__MACOSX
+
 # Archive
 *.zip
 *.rar
