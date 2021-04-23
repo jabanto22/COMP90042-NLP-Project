@@ -1,4 +1,4 @@
-# NLP-Project
+# Rumour Detection and Analysis on Twitter
 
 ### Task1
 Provided a dataset of source tweets and their replies, where each source tweet is labeled as a rumour or non-rumour, the task is to build a binary classifier using this dataset. For each tweet (source tweet or reply tweet), the dataset provides a range of information, including the text of the tweet, information of the user who made the
