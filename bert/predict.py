@@ -53,23 +53,23 @@ def extract_class_labels():
     return label
 
 
-def save_result(data, path_to_output_file=source_folder + "output.txt"):
+def save_result(data, path_to_output_file=source_folder + "output.txt", save_file=source_folder + "output.json"):
     """
     Save predictions on the test data to json file.
     """
-    probs_test = pd.read_csv(path_to_output_file, header=None)[0]  # read prediction probabilities from file
-    preds_test=(probs_test>=0.5).astype('uint8') # predicted labels using the fixed threshold of 0.5
+    probs = pd.read_csv(path_to_output_file, header=None)[0]  # read prediction probabilities from file
+    preds = (probs>=0.5).astype('uint8') # predicted labels using the fixed threshold of 0.5
 
     labels = extract_class_labels()
     pred_label = {}
-    for i in range(len(preds_test)):
-        code = str(preds_test[i])
+    for i in range(len(preds)):
+        code = str(preds[i])
         text_id = str(data.iloc[i]['id'])
         pred_label[text_id] = labels[code]
         
     # write predicted labels to json file
-    with open(source_folder + 'test-output.json', 'w') as f:
+    with open(save_file, 'w') as f:
         json.dump(pred_label, f, separators=(',', ':'))
     f.close()
 
-    print("Predictions for test data are available in : {}".format(source_folder + 'test-output.json'))
+    print("Predictions are available in : {}".format(save_file))
