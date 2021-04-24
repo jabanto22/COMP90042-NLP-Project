@@ -55,7 +55,8 @@ def test_prediction():
                     result_file=path_to_output_file)
     print("\nTest classification probabilities are available in : {}".format(path_to_output_file))
 
-    save_result(test_df, path_to_output_file)
+    path_to_output_json = source_folder + 'test-output.json'
+    save_result(test_df, path_to_output_file, path_to_output_json)
 
 
 if __name__ == "__main__":
