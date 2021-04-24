@@ -39,7 +39,7 @@ def test_prediction():
     # load the best model for classification task
     model = SentencePairClassifier(bert_model)
     print("\nLoading the weights of the model...")
-    model.load_state_dict(torch.load(path_to_model))
+    model.load_state_dict(torch.load(path_to_model, map_location=device))
     model.to(device)
 
     # use the trained model to predict class labels for the test set
