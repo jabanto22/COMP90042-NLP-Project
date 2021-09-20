@@ -5,3 +5,6 @@ Provided a dataset of source tweets and their replies, where each source tweet i
 tweet, unique ID of the tweet, etc.
 
 For this task, a sentence-pair binary classifier built on pre-trained BERT model was implemented using PyTorch.
+
+### Task2
+Using the trained rumour classifier from **Task1**, rumours from a COVID-19 set of tweets were detected to understand the popular hashtags and difference in setiments of rumour vs. non-rumour tweets.
